@@ -1,0 +1,34 @@
+Как запустить docker без sudo:
+
+# sudo groupadd docker
+
+# sudo gpasswd -a $USER docker 
+
+# newgrp docker
+
+_________________________________
+
+
+ docker run --mount type=volume,source=postgres_volume,destination=/p_vol --name my_pretty_postgre -e POSTGRES_PASSWORD=password -d postgres
+ 
+ docker exec -it my_pretty_postgre bash
+ 
+ sudo ls /var/lib/docker/volumes/postgres_volume
+
+ docker exec my_pretty_postgre psql -U postgres -d postgres -f /var/lib/docker/volumes/postgres_volume
+
+ 
+psql -h localhost -p 5432 -d postgres -U postgres --password  - зайти в контейнер с базой через локальный клиент
+
+
+
+https://postgrespro.ru/docs/postgrespro/9.6/app-psql - ВСЕ КЛЮЧИ PSQL
+
+
+createdb <name> - создать БД
+psql -d <name> - зайти в базу
+psql -l - список доступных БД
+
+createdb leasing_content
+
+pg_restore -d leasing_content dump-leasing_content.sql

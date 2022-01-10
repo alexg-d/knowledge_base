@@ -1,0 +1,4 @@
+ 
+python3.8 /home/alexg/scripts/rclonesync /home/alexg/gdrive_diar/ gdrive_kagal:diar
+
+python3.8 /home/alexg/scripts/rclonesync --first-sync /home/alexg/gdrive_diar/ gdrive_kagal:diar
